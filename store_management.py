@@ -1,43 +1,53 @@
 products = []
 
-i = input("Do you want to add a product? (yes/no) ")
+positive_answer = "yes"
 
-while i == "yes":
+i = input("Is there a product to register? (yes/no) ").lower()
+   
+while i == positive_answer:
 
-    p_name = input("Enter product name: ")
-    p_price = float(input("Enter product price: "))
-    stock = int(input("Enter product stock: "))
+    positive_answer = "yes"
 
-    product = {
-        "p_name": p_name,
-        "p_price": p_price,
-        "stock": stock
-    }
+    p_name = input("Enter the product name : ").lower()
+    p_price = float(input("Enter the product price in usd : "))
+    stock = int(input("Enter the number of product in stock : "))
+
+    product = {"p_name" : p_name , "p_price" : p_price , "stock" : stock}
+    print (product)
 
     products.append(product)
+    
+    endloop = input("Do you want to add another product? (yes/no) ").lower()
+    if endloop != "yes":
+        break
 
-    i = input("Do you want to add another product? (yes/no) ")
+if len(products) == 0 :
+    print("There is nothing in stock" )
+else:   
+    print(products)
 
-print(products)
+j = input("Do you want to search between products? (yes/no) ").lower()
+if j == "yes":
+    while j == "yes":
+        search_stock = input("Enter the product name for search: ").lower()
+    
+        found = False
 
-j = input("Do you want to search for a product? (yes/no) ")
+        for product in products:
 
-while j == "yes":
+            if search_stock == product["p_name"] :
+                found = True
+                break
 
-    search_stock = input("Enter product name: ")
+        if found and product["stock"] > 0 :
+            print(f"Yes {product['p_name']} was in stock and price is {product['p_price']} usd and there is {product['stock']}. ")
 
-    for product in products:
+        elif found and product["stock"] == 0 :
+            print(f"{search_stock} was out stock. ")
 
-        if search_stock == product["p_name"]:
+        else:
+            print(f"No {search_stock} was not in stock. ")
 
-            print("Product found!")
-            print("Price:", product["p_price"])
-            print("Stock:", product["stock"])
-            break
-
-    else:
-        print("Product not found.")
-
-    j = input("Do you want to search again? (yes/no) ")
+        j = input("Do you want to search between products? (yes/or) ").lower()
 
 print("End of work")

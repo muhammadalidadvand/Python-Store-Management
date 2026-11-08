@@ -6,8 +6,8 @@ This project demonstrates basic Python programming concepts through product regi
 
 ## Version History
 
-- **Version 1.0:** Basic product registration and product search.
-- **Version 2.0:** Improved product search logic, case-insensitive input handling, and stock availability checking.
+- **Version 1.0:** Initial implementation of basic product registration and search functionality.
+- **Version 2.0:** Improved search logic, case-insensitive product matching, and separate handling of out-of-stock products.
 
 ## Version 2.0 Features
 
@@ -15,7 +15,7 @@ This project demonstrates basic Python programming concepts through product regi
 - Store product information using lists and dictionaries.
 - Enter product names, prices, and stock quantities.
 - Search for products by name.
-- Convert product names to lowercase for easier searching.
+- Support case-insensitive product name searches using `lower()`.
 - Use a `found` variable to identify matching products.
 - Check whether a product is available in stock.
 - Identify products with zero stock.
@@ -44,7 +44,7 @@ This project demonstrates basic Python programming concepts through product regi
 
 Users can register multiple products by entering the product name, price, and stock quantity.
 
-Each product is stored in a dictionary, and all dictionaries are added to a list.
+Each product is stored in a dictionary, and all product dictionaries are added to a list.
 
 ### 2. Product Storage
 
@@ -74,6 +74,7 @@ If no matching product is found, the program displays a product-not-found messag
 - Duplicate product names are not prevented.
 - Product editing and deletion are not supported.
 - The program does not use a database.
+- Product searches return only the first matching product.
 
 ## Project Status
 

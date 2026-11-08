@@ -2,99 +2,79 @@
 
 A simple store management system developed using Python.
 
-This project is an introductory Python programming project focused on basic product registration, data storage, and product search functionality.
+This project demonstrates basic Python programming concepts through product registration, data storage, and product search functionality.
 
-## Version
+## Version History
 
-**Version 1.0 – Initial Release**
+- **Version 1.0:** Basic product registration and product search.
+- **Version 2.0:** Improved product search logic, case-insensitive input handling, and stock availability checking.
 
-## Features
+## Version 2.0 Features
 
 - Register multiple products.
-- Store product information using dictionaries.
-- Keep registered products in a list.
-- Enter product name, price, and stock quantity.
+- Store product information using lists and dictionaries.
+- Enter product names, prices, and stock quantities.
 - Search for products by name.
-- Display product price and stock quantity.
-- Search for multiple products during one program session.
-- Display a message when a searched product is not found.
+- Convert product names to lowercase for easier searching.
+- Use a `found` variable to identify matching products.
+- Check whether a product is available in stock.
+- Identify products with zero stock.
+- Display product prices and stock quantities.
+- Support multiple product searches.
 
 ## Technologies and Concepts Used
 
-This project was developed using Python and the following programming concepts:
-
-- Variables
-- Strings, integers, and floating-point numbers
+- Python
+- Variables and data types
 - Lists
 - Dictionaries
-- User input with `input()`
-- Type conversion with `int()` and `float()`
+- `input()`
+- `int()` and `float()`
+- `lower()`
 - `while` loops
 - `for` loops
-- `if` statements
-- Conditional comparisons
-- `append()` method
-- `break` statement
-- `for...else` statement
+- Conditional statements
+- Boolean variables
+- `append()`
+- `break`
 
 ## How It Works
 
 ### 1. Product Registration
 
-The program asks the user whether they want to add a product.
+Users can register multiple products by entering the product name, price, and stock quantity.
 
-If the answer is `yes`, the user enters:
+Each product is stored in a dictionary, and all dictionaries are added to a list.
 
-- Product name
-- Product price
-- Stock quantity
+### 2. Product Storage
 
-The information is stored in a dictionary, and each product dictionary is added to a list.
+Product information is temporarily stored in the program's memory using a list of dictionaries.
 
-The registration process continues until the user chooses not to add another product.
+### 3. Product Search
 
-### 2. Product Search
+Users can search for products by entering their names.
 
-After registration, the program asks whether the user wants to search for a product.
+The program converts product names and search inputs to lowercase to make searching case-insensitive.
 
-The user enters a product name, and the program searches through the registered products.
+A Boolean variable called `found` is used to determine whether a matching product exists.
 
-If the product is found, the program displays its price and stock quantity.
+### 4. Stock Availability
 
-If no matching product is found, the program displays a message indicating that the product was not found.
+If a product is found and its stock quantity is greater than zero, the program displays its price and available quantity.
 
-The user can perform multiple searches during the same session.
+If the stock quantity is zero, the program displays an out-of-stock message.
 
-## Data Storage
-
-Product information is stored temporarily in a Python list containing dictionaries.
-
-The data is kept in the program's memory and is not saved permanently.
-
-As a result, registered products will be lost when the program ends.
+If no matching product is found, the program displays a product-not-found message.
 
 ## Current Limitations
 
-This is the initial version of the project. It has some limitations:
-
-- Product information is not saved to a file or database.
+- Product information is not saved permanently.
 - Invalid numeric inputs are not handled.
 - Negative prices and stock quantities are not validated.
-- Product searches are case-sensitive.
 - Duplicate product names are not prevented.
-- The program does not include product editing or deletion features.
-
-## Future Improvements
-
-Possible improvements for future versions include:
-
-- Improving input validation.
-- Making product searches more reliable.
-- Adding product editing and deletion.
-- Improving stock management.
-- Saving product information permanently.
-- Adding more advanced management features.
+- Product editing and deletion are not supported.
+- The program does not use a database.
 
 ## Project Status
 
-Version 1.0 – Basic product registration and search functionality.
+**Version 2.0 – Improved Product Registration and Search System**
